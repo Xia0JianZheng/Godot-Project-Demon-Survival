@@ -21,7 +21,7 @@ func _on_Scoreboard_pressed():
 
 
 func _on_Shop_pressed():
-	print(\"shop\")
+	get_tree().change_scene(\"res://menu/Shop.tscn\")
 
 
 func _on_Exit_pressed():

@@ -65,4 +65,5 @@ text = "Play Agian"
 arrow_margin_from_center = 150
 
 [connection signal="pressed" from="Main Menu" to="." method="_on_Main_Menu_pressed"]
+[connection signal="pressed" from="Shop" to="." method="_on_Shop_pressed"]
 [connection signal="pressed" from="Play Again" to="." method="_on_Play_Again_pressed"]
