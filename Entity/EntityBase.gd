@@ -67,13 +67,16 @@ func die():
 		SPEED = 0
 		spawn_effect(WIZARD_EFFECT_DIED)
 		queue_free()
+		get_tree().change_scene("res://menu/GameOverScreen.tscn")
 	if self.is_in_group("Skeleton"):
 		SPEED = 0
 		Global.score += 10
+		Global.gold += 2
 		spawn_effect(SKELETON_EFFECT_DIED)
 		queue_free()
 	if self.is_in_group("StoneGolem"):
 		Global.score += 20
+		Global.gold += 5
 		SPEED = 0
 		spawn_effect(STONEGOLEM_EFFECT_DIED)
 		queue_free()
