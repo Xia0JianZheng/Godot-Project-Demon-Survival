@@ -10,7 +10,7 @@ export(int) var hp_max: int = 100 setget set_hp_max
 export(int) var hp: int = hp_max setget set_hp, get_hp
 export(int) var defense: int = 0
 
-export(int) var SPEED: int = 25
+export(int) var SPEED: int = 40
 var velocity: Vector2 = Vector2.ZERO
 
 export(bool) var receives_knockback: bool = true

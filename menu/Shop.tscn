@@ -225,3 +225,7 @@ margin_right = -9.0
 margin_bottom = -11.0
 
 [node name="Gold" parent="." instance=ExtResource( 2 )]
+margin_left = 58.0
+margin_top = 127.0
+margin_right = 98.0
+margin_bottom = 155.0

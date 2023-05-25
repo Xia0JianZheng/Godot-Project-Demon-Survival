@@ -5,7 +5,7 @@ func _physics_process(delta):
 	
 	if player != null:
 		var direction = (player.position - position).normalized()
-		move_and_slide(direction * SPEED)
+		move_and_slide(direction * SPEED * 1.0)
 		if player.position.x < position.x:
 			# Player is on the left side
 			self.sprite.flip_h = true# Flip the sprite horizontally
