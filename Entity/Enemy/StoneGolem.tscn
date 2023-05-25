@@ -39,6 +39,7 @@ tracks/0/keys = {
 
 [node name="StoneGolem" groups=["Enemy", "StoneGolem"] instance=ExtResource( 3 )]
 script = ExtResource( 1 )
+knockback_modifier = 0.3
 STONESPEAR = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]

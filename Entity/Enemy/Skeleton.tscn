@@ -26,6 +26,7 @@ tracks/0/keys = {
 
 [node name="Skeleton" groups=["Enemy", "Skeleton"] instance=ExtResource( 1 )]
 position = Vector2( -1, 0 )
+knockback_modifier = 0.5
 STONEGOLEM_EFFECT_DIED = null
 
 [node name="Sprite" parent="." index="0"]
@@ -40,10 +41,6 @@ autoplay = "run"
 anims/run = SubResource( 2 )
 
 [node name="Hitbox" parent="." index="3" groups=["Enemy", "Skeleton"]]
-
-[node name="InvencibleTimer" type="Timer" parent="." index="5"]
-wait_time = 2.0
-one_shot = true
 
 [editable path="Hitbox"]
 [editable path="HurtBox"]

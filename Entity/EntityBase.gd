@@ -14,7 +14,7 @@ export(int) var SPEED: int = 25
 var velocity: Vector2 = Vector2.ZERO
 
 export(bool) var receives_knockback: bool = true
-export(float) var knockback_modifier: float = 2
+export(float) var knockback_modifier: float = 0.2
 
 export(PackedScene) var WIZARD_EFFECT_DIED: PackedScene = null
 export(PackedScene) var SKELETON_EFFECT_DIED: PackedScene = null
@@ -57,8 +57,6 @@ func _physics_process(delta):
 	
 	if HealthBarTimer.is_stopped():
 		healthBar.hide()
-	if KnockBackTimer.is_stopped():
-		self.SPEED = 25
 	move()
 
 func move():
@@ -105,9 +103,6 @@ func _on_HurtBox_area_entered(hitbox):
 		hitbox.hit()
 	
 	receive_knockback(hitbox.global_position, actual_damage)
-	if self.is_in_group("Skeleton"):
-		self.SPEED = 0
-		KnockBackTimer.start()
 		
 	spawn_damageIndicator(actual_damage)
 

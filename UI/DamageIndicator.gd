@@ -1,6 +1,6 @@
 extends Node2D
 
-export(int) var SPEED: int = 120
+export(int) var SPEED: int = 60
 export(int) var FRICTION: int = 30
 var SHIFT_DIRECTION: Vector2 = Vector2.ZERO
 
