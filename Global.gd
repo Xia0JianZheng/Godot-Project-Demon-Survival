@@ -1,8 +1,8 @@
 extends Node
 
 var score = 0
-
 var gold = 0
+var playerDamage = 0
 
 var shop
 var save_shop_path = 'res://save/shop'

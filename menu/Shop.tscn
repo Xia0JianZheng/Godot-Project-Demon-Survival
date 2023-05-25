@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/font/m6x11.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/Gold.tscn" type="PackedScene" id=2]
@@ -51,6 +51,10 @@ TabContainer/styles/tab_bg = SubResource( 3 )
 TabContainer/styles/tab_fg = SubResource( 4 )
 
 [sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=7]
@@ -119,13 +123,15 @@ margin_right = 76.5
 margin_bottom = -43.0
 text = "Upgrade"
 
-[node name="Label" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel1"]
+[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel1"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -20.0
+margin_left = -49.0
 margin_top = 32.0
-margin_right = 20.0
-margin_bottom = 46.0
+margin_right = 49.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 10 )
+text = "Strengh"
 
 [node name="Panel2" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
 margin_left = 364.0
@@ -146,13 +152,15 @@ margin_right = 76.5
 margin_bottom = -43.0
 text = "Upgrade"
 
-[node name="Label" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel2"]
+[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel2"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -20.0
+margin_left = -49.0
 margin_top = 32.0
-margin_right = 20.0
-margin_bottom = 46.0
+margin_right = 49.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 10 )
+text = "Strengh"
 
 [node name="Panel3" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
 margin_left = 706.0
@@ -173,13 +181,15 @@ margin_right = 76.5
 margin_bottom = -43.0
 text = "Upgrade"
 
-[node name="Label" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel3"]
+[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel3"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -20.0
+margin_left = -49.0
 margin_top = 32.0
-margin_right = 20.0
-margin_bottom = 46.0
+margin_right = 49.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 10 )
+text = "Strengh"
 
 [node name="Panel4" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
 margin_left = 1042.0

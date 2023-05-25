@@ -6,6 +6,11 @@ onready var ySort = $YSortNode
 
 func _ready():
 	randomize()
+	
+func _process(delta):
+	if Input.is_key_pressed(KEY_ENTER):
+		get_tree().change_scene("res://menu/shop.tscn")
+
 
 func _on_SkeletonSpawnTimer_timeout():
 	var rngSkeleton = RandomNumberGenerator.new()
