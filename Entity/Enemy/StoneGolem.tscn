@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Entity/Enemy/StoneGolem.gd" type="Script" id=1]
+[ext_resource path="res://Projectile/StoneGolemSpear.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entity/Enemy/EnemyBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/StoneGolem/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=3]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 22, 23, 24, 25, 26, 27, 28 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "run"
+length = 1.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+
+[node name="StoneGolem" groups=["Enemy", "StoneGolem"] instance=ExtResource( 3 )]
+script = ExtResource( 1 )
+STONESPEAR = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 5 )
+hframes = 10
+vframes = 10
+frame = 28
+
+[node name="AnimationPlayer" parent="." index="2" groups=["Enemy", "StoneGolem"]]
+autoplay = "run"
+anims/attack = SubResource( 3 )
+anims/run = SubResource( 1 )
+
+[node name="AttackTimer" type="Timer" parent="." index="5"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="Hitbox"]
+[editable path="HurtBox"]
