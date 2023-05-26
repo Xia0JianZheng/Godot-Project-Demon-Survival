@@ -580,14 +580,14 @@ position = Vector2( 628, 346 )
 current = true
 zoom = Vector2( 0.75, 0.75 )
 
-[node name="Score" parent="Camera2D" groups=["Persist"] instance=ExtResource( 11 )]
+[node name="Score" parent="Camera2D" groups=["Score"] instance=ExtResource( 11 )]
 margin_left = 277.0
 margin_top = -264.0
 margin_right = 373.0
 margin_bottom = -236.0
 text = "Score : "
 
-[node name="Gold" parent="Camera2D" groups=["Persist"] instance=ExtResource( 10 )]
+[node name="Gold" parent="Camera2D" groups=["Gold"] instance=ExtResource( 10 )]
 margin_left = 277.0
 margin_top = -232.0
 margin_right = 351.0
@@ -596,5 +596,5 @@ text = "Gold : "
 
 [connection signal="timeout" from="SkeletonSpawnTimer" to="." method="_on_SkeletonSpawnTimer_timeout"]
 [connection signal="timeout" from="StoneGolemSpawnTimer" to="." method="_on_StoneGolemSpawnTimer_timeout"]
-[connection signal="pressed" from="PauseMenu/Pause/Menu/SaveGame" to="." method="_on_SaveGame_pressed"]
+[connection signal="pressed" from="PauseMenu/Pause/Menu/SaveGame" to="PauseMenu/Pause" method="_on_SaveGame_pressed"]
 [connection signal="pressed" from="PauseMenu/Pause/Menu/MainMenu" to="PauseMenu/Pause" method="_on_MainMenu_pressed"]

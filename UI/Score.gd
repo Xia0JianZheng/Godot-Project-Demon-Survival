@@ -1,4 +1,12 @@
 extends Label
 
-func _process(delta):
-	self.text = str("Score : ", Global.score)
+var score = 0
+func _process(_delta):
+	score = Global.score 
+	self.text = str("Score : ", score)
+
+func save():
+	var save_dict = {
+		"score" : score
+	}
+	return save_dict

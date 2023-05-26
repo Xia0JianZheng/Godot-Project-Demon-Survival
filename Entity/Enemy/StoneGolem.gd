@@ -5,7 +5,7 @@ export(PackedScene) var STONESPEAR: PackedScene = preload("res://Projectile/Ston
 onready var attackTimer = $AttackTimer
 onready var attackPlayer = $AnimationPlayer
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var player = get_parent().get_node("Player")
 	if player != null and attackTimer.is_stopped():
 		attackPlayer.play("attack")

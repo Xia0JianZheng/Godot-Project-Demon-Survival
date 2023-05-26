@@ -21,4 +21,4 @@ func _on_Exit_pressed():
 
 
 func _on_OptionsMenu_ready():
-		$TittleMenu/OptionsMenu/NewGame.grab_focus()
+	$TittleMenu/OptionsMenu/NewGame.grab_focus()

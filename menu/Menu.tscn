@@ -13,15 +13,19 @@ func _on_NewGame_pressed():
 
 
 func _on_Continue_pressed():
-	Global.load_file()
+	var global = get_node(\"/root/Global\") 
+	if global != null:
+		global.load_gold()
 
 
 func _on_Scoreboard_pressed():
-	print(\"score\")
+	var global = get_node(\"/root/Global\") 
+	if global != null:
+		global.load_score()
 
 
 func _on_Shop_pressed():
-	get_tree().change_scene(\"res://menu/Shop.tscn\")
+	get_tree().change_scene(\"res://Shop/Shop.tscn\")
 
 
 func _on_Exit_pressed():
@@ -29,7 +33,7 @@ func _on_Exit_pressed():
 
 
 func _on_OptionsMenu_ready():
-		$TittleMenu/OptionsMenu/NewGame.grab_focus()
+	$TittleMenu/OptionsMenu/NewGame.grab_focus()
 "
 
 [sub_resource type="DynamicFont" id=7]
@@ -39,9 +43,7 @@ font_data = ExtResource( 3 )
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 4.0
 margin_top = -1.0
-margin_right = 4.0
 margin_bottom = -1.0
 script = SubResource( 8 )
 

@@ -2,9 +2,10 @@
 
 [ext_resource path="res://Assets/font/m6x11.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/Gold.tscn" type="PackedScene" id=2]
-[ext_resource path="res://menu/Shop.gd" type="Script" id=3]
-[ext_resource path="res://menu/Upgrades.gd" type="Script" id=4]
-[ext_resource path="res://menu/Skins.gd" type="Script" id=5]
+[ext_resource path="res://Shop/Shop.gd" type="Script" id=3]
+[ext_resource path="res://Shop/Upgrades.gd" type="Script" id=4]
+[ext_resource path="res://Shop/Skins.gd" type="Script" id=5]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 100

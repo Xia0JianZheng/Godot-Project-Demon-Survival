@@ -5,11 +5,14 @@ func _input(event):
 		var new_pause_state = not get_tree().paused
 		get_tree().paused = new_pause_state
 		visible = new_pause_state
-		
-		
 
 
 func _on_MainMenu_pressed():
 	var new_pause_state = not get_tree().paused
 	get_tree().paused = new_pause_state
 	get_tree().change_scene("res://menu/Menu.tscn")
+
+func _on_SaveGame_pressed():
+	var global = get_node("/root/Global") 
+	if global != null:
+		global.save_gold()

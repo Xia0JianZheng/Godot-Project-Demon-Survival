@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Gold.tscn" type="PackedScene" id=2]
@@ -9,12 +9,17 @@
 [ext_resource path="res://Assets/Wizard/magoGameOver.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Wizard/single-red-flower-in-pixel-art-style-vector-removebg-preview.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Map/Tileset Grass.png" type="Texture" id=9]
+[ext_resource path="res://UI/PlayerName.gd" type="Script" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 75
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 32
 font_data = ExtResource( 4 )
 
@@ -34,15 +39,20 @@ font_data = ExtResource( 4 )
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 4 )
+
 [node name="GameOverScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_top = 10.0
-margin_right = 1280.0
-margin_bottom = 731.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -16.0
+margin_right = -16.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="GameOver" type="Label" parent="."]
@@ -72,6 +82,14 @@ margin_bottom = 294.0
 custom_fonts/font = SubResource( 2 )
 text = "Gold : "
 
+[node name="PlayerName" type="LineEdit" parent="."]
+margin_left = 541.0
+margin_top = 451.0
+margin_right = 741.0
+margin_bottom = 489.0
+custom_fonts/font = SubResource( 6 )
+script = ExtResource( 10 )
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 3 )
 cell_size = Vector2( 16, 16 )
@@ -98,36 +116,52 @@ texture = ExtResource( 8 )
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = 107.0
-margin_bottom = 265.0
+margin_top = 148.0
+margin_bottom = 360.0
 
-[node name="PlayAgain" parent="GameOverMenu" instance=ExtResource( 3 )]
+[node name="Submit" parent="GameOverMenu" instance=ExtResource( 3 )]
 margin_top = 0.0
 margin_right = 1280.0
 margin_bottom = 50.0
+text = "Submit"
+
+[node name="PlayAgain" parent="GameOverMenu" instance=ExtResource( 3 )]
+margin_top = 54.0
+margin_right = 1280.0
+margin_bottom = 104.0
 focus_neighbour_top = NodePath("../Shop")
 focus_neighbour_bottom = NodePath("../MainMenu")
 text = "Play Again"
 arrow_margin_from_center = 150
 
 [node name="Shop" parent="GameOverMenu" instance=ExtResource( 3 )]
-margin_top = 54.0
+margin_top = 108.0
 margin_right = 1280.0
-margin_bottom = 104.0
+margin_bottom = 158.0
 focus_neighbour_top = NodePath("../MainMenu")
 focus_neighbour_bottom = NodePath("../PlayAgain")
 text = "Shop"
 
 [node name="MainMenu" parent="GameOverMenu" instance=ExtResource( 3 )]
-margin_top = 108.0
+margin_top = 162.0
 margin_right = 1280.0
-margin_bottom = 158.0
+margin_bottom = 212.0
 focus_neighbour_top = NodePath("../PlayAgain")
 focus_neighbour_bottom = NodePath("../Shop")
 text = "Main Menu"
 arrow_margin_from_center = 150
 
+[node name="Label" type="Label" parent="."]
+margin_left = 357.0
+margin_top = 455.0
+margin_right = 529.0
+margin_bottom = 483.0
+custom_fonts/font = SubResource( 5 )
+text = "Player Name : "
+
+[connection signal="text_entered" from="PlayerName" to="PlayerName" method="_on_PlayerName_text_entered"]
 [connection signal="ready" from="GameOverMenu" to="." method="_on_GameOverMenu_ready"]
+[connection signal="pressed" from="GameOverMenu/Submit" to="." method="_on_Submit_pressed"]
 [connection signal="pressed" from="GameOverMenu/PlayAgain" to="." method="_on_Play_Again_pressed"]
 [connection signal="pressed" from="GameOverMenu/Shop" to="." method="_on_Shop_pressed"]
 [connection signal="pressed" from="GameOverMenu/MainMenu" to="." method="_on_Main_Menu_pressed"]
