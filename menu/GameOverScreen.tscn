@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Gold.tscn" type="PackedScene" id=2]
 [ext_resource path="res://menu/MenuUtility/MenuButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/font/m6x11.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://menu/GameOverScreen.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Wizard/204799631-tumba-lápida-juego-pixel-art-vector-ilustración-removebg-preview.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Wizard/magoGameOver.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Wizard/single-red-flower-in-pixel-art-style-vector-removebg-preview.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 75
@@ -18,51 +21,73 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
 
-[node name="GmeOver" type="Label" parent="."]
-margin_left = 475.0
-margin_top = 178.0
-margin_right = 771.0
-margin_bottom = 245.0
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 10.0
+margin_right = 1280.0
+margin_bottom = 731.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="GameOver" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -140.0
+margin_top = -234.0
+margin_right = 156.0
+margin_bottom = -167.0
 custom_fonts/font = SubResource( 1 )
 text = "Game Over"
 
 [node name="Score" parent="." instance=ExtResource( 1 )]
-margin_left = 596.0
-margin_top = 354.0
-margin_right = 636.0
-margin_bottom = 368.0
+margin_left = 618.0
+margin_top = 256.0
+margin_right = 666.0
+margin_bottom = 270.0
 text = "Score : "
 
 [node name="Gold" parent="." instance=ExtResource( 2 )]
-margin_left = 597.0
-margin_top = 371.0
-margin_right = 638.0
-margin_bottom = 385.0
+margin_left = 619.0
+margin_top = 273.0
+margin_right = 656.0
+margin_bottom = 287.0
 custom_fonts/font = SubResource( 2 )
 text = "Gold : "
 
 [node name="Main Menu" parent="." instance=ExtResource( 3 )]
-margin_left = 3.0
-margin_top = 632.0
-margin_right = 1274.0
-margin_bottom = 682.0
+margin_top = 567.0
+margin_bottom = 617.0
 text = "Main Menu"
 arrow_margin_from_center = 150
 
 [node name="Shop" parent="." instance=ExtResource( 3 )]
-margin_left = 3.0
-margin_top = 520.0
-margin_right = 1274.0
-margin_bottom = 570.0
+margin_top = 455.0
+margin_bottom = 505.0
 text = "Shop"
 
 [node name="Play Again" parent="." instance=ExtResource( 3 )]
-margin_left = 9.0
-margin_top = 578.0
-margin_right = 1280.0
-margin_bottom = 628.0
+margin_left = 6.0
+margin_top = 513.0
+margin_right = 1277.0
+margin_bottom = 563.0
 text = "Play Agian"
 arrow_margin_from_center = 150
+
+[node name="tumba" type="Sprite" parent="."]
+position = Vector2( 634.206, 364.206 )
+scale = Vector2( 0.254248, 0.254248 )
+texture = ExtResource( 6 )
+
+[node name="MagoGameOver" type="Sprite" parent="."]
+position = Vector2( 632.412, 383 )
+scale = Vector2( 1.02273, 1.02273 )
+texture = ExtResource( 7 )
+
+[node name="Single-red-flower-in-pixel-art-style-vector-removebg-preview" type="Sprite" parent="."]
+position = Vector2( 635.412, 404 )
+rotation = 1.20253
+scale = Vector2( 0.0947843, 0.0947843 )
+texture = ExtResource( 8 )
 
 [connection signal="pressed" from="Main Menu" to="." method="_on_Main_Menu_pressed"]
 [connection signal="pressed" from="Shop" to="." method="_on_Shop_pressed"]
