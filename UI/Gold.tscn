@@ -4,6 +4,7 @@
 [ext_resource path="res://Assets/font/m6x11.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
+size = 32
 font_data = ExtResource( 2 )
 
 [node name="Gold" type="Label"]

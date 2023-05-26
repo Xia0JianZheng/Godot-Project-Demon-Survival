@@ -26,6 +26,7 @@ tracks/0/keys = {
 
 [node name="Skeleton" groups=["Enemy", "Skeleton"] instance=ExtResource( 1 )]
 position = Vector2( -1, 0 )
+SPEED = 50
 knockback_modifier = 0.5
 STONEGOLEM_EFFECT_DIED = null
 

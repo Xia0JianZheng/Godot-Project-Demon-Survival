@@ -39,6 +39,5 @@ func _on_TextureButton_focus_exited():
 func _on_TextureButton_mouse_entered():
 	grab_focus()
 
-
 func _on_NewGame_ready():
 	grab_focus()

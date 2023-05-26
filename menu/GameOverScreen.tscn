@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Gold.tscn" type="PackedScene" id=2]
@@ -8,13 +8,31 @@
 [ext_resource path="res://Assets/Wizard/204799631-tumba-lápida-juego-pixel-art-vector-ilustración-removebg-preview.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Wizard/magoGameOver.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Wizard/single-red-flower-in-pixel-art-style-vector-removebg-preview.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Map/Tileset Grass.png" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 75
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
+size = 32
 font_data = ExtResource( 4 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "Tileset Grass.png 0"
+0/texture = ExtResource( 9 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 64, 32, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
 
 [node name="GameOverScreen" type="Control"]
 anchor_right = 1.0
@@ -40,38 +58,25 @@ custom_fonts/font = SubResource( 1 )
 text = "Game Over"
 
 [node name="Score" parent="." instance=ExtResource( 1 )]
-margin_left = 618.0
-margin_top = 256.0
-margin_right = 666.0
-margin_bottom = 270.0
+margin_left = 542.0
+margin_top = 229.0
+margin_right = 638.0
+margin_bottom = 257.0
 text = "Score : "
 
 [node name="Gold" parent="." instance=ExtResource( 2 )]
-margin_left = 619.0
-margin_top = 273.0
-margin_right = 656.0
-margin_bottom = 287.0
+margin_left = 542.0
+margin_top = 266.0
+margin_right = 616.0
+margin_bottom = 294.0
 custom_fonts/font = SubResource( 2 )
 text = "Gold : "
 
-[node name="Main Menu" parent="." instance=ExtResource( 3 )]
-margin_top = 567.0
-margin_bottom = 617.0
-text = "Main Menu"
-arrow_margin_from_center = 150
-
-[node name="Shop" parent="." instance=ExtResource( 3 )]
-margin_top = 455.0
-margin_bottom = 505.0
-text = "Shop"
-
-[node name="Play Again" parent="." instance=ExtResource( 3 )]
-margin_left = 6.0
-margin_top = 513.0
-margin_right = 1277.0
-margin_bottom = 563.0
-text = "Play Agian"
-arrow_margin_from_center = 150
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1572901, 0, 0, 1572903, 0, 0, 1572904, 0, 0, 1638437, 0, 0, 1638439, 0, 0, 1638440, 0, 0 )
 
 [node name="tumba" type="Sprite" parent="."]
 position = Vector2( 634.206, 364.206 )
@@ -89,6 +94,40 @@ rotation = 1.20253
 scale = Vector2( 0.0947843, 0.0947843 )
 texture = ExtResource( 8 )
 
-[connection signal="pressed" from="Main Menu" to="." method="_on_Main_Menu_pressed"]
-[connection signal="pressed" from="Shop" to="." method="_on_Shop_pressed"]
-[connection signal="pressed" from="Play Again" to="." method="_on_Play_Again_pressed"]
+[node name="GameOverMenu" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 107.0
+margin_bottom = 265.0
+
+[node name="PlayAgain" parent="GameOverMenu" instance=ExtResource( 3 )]
+margin_top = 0.0
+margin_right = 1280.0
+margin_bottom = 50.0
+focus_neighbour_top = NodePath("../Shop")
+focus_neighbour_bottom = NodePath("../MainMenu")
+text = "Play Again"
+arrow_margin_from_center = 150
+
+[node name="Shop" parent="GameOverMenu" instance=ExtResource( 3 )]
+margin_top = 54.0
+margin_right = 1280.0
+margin_bottom = 104.0
+focus_neighbour_top = NodePath("../MainMenu")
+focus_neighbour_bottom = NodePath("../PlayAgain")
+text = "Shop"
+
+[node name="MainMenu" parent="GameOverMenu" instance=ExtResource( 3 )]
+margin_top = 108.0
+margin_right = 1280.0
+margin_bottom = 158.0
+focus_neighbour_top = NodePath("../PlayAgain")
+focus_neighbour_bottom = NodePath("../Shop")
+text = "Main Menu"
+arrow_margin_from_center = 150
+
+[connection signal="ready" from="GameOverMenu" to="." method="_on_GameOverMenu_ready"]
+[connection signal="pressed" from="GameOverMenu/PlayAgain" to="." method="_on_Play_Again_pressed"]
+[connection signal="pressed" from="GameOverMenu/Shop" to="." method="_on_Shop_pressed"]
+[connection signal="pressed" from="GameOverMenu/MainMenu" to="." method="_on_Main_Menu_pressed"]

@@ -11,6 +11,7 @@ size = 100
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=8]
+size = 20
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -88,7 +89,7 @@ theme = SubResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
-margin_top = 34.0
+margin_top = 38.0
 margin_right = -10.0
 margin_bottom = -10.0
 custom_fonts/font = SubResource( 6 )
@@ -133,6 +134,13 @@ margin_bottom = 60.0
 custom_fonts/font = SubResource( 10 )
 text = "Strengh"
 
+[node name="CurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel1"]
+margin_left = 100.0
+margin_top = 191.0
+margin_right = 205.0
+margin_bottom = 205.0
+text = "Current Level : 0"
+
 [node name="Panel2" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
 margin_left = 364.0
 margin_top = 100.0
@@ -160,7 +168,14 @@ margin_top = 32.0
 margin_right = 49.0
 margin_bottom = 60.0
 custom_fonts/font = SubResource( 10 )
-text = "Strengh"
+text = "Defense"
+
+[node name="CurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel2"]
+margin_left = 100.0
+margin_top = 191.0
+margin_right = 205.0
+margin_bottom = 205.0
+text = "Current Level : 0"
 
 [node name="Panel3" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
 margin_left = 706.0
@@ -184,12 +199,19 @@ text = "Upgrade"
 [node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel3"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -49.0
+margin_left = -81.0
 margin_top = 32.0
-margin_right = 49.0
+margin_right = 83.0
 margin_bottom = 60.0
 custom_fonts/font = SubResource( 10 )
-text = "Strengh"
+text = "Attack Speed"
+
+[node name="CurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel3"]
+margin_left = 100.0
+margin_top = 191.0
+margin_right = 205.0
+margin_bottom = 205.0
+text = "Current Level : 0"
 
 [node name="Panel4" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
 margin_left = 1042.0
@@ -201,7 +223,7 @@ margin_bottom = 407.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -39.0
+margin_top = -42.0
 max_value = 500.0
 page = 30.0
 

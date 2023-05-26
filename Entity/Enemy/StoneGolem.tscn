@@ -46,7 +46,7 @@ STONESPEAR = ExtResource( 2 )
 texture = ExtResource( 5 )
 hframes = 10
 vframes = 10
-frame = 28
+frame = 20
 
 [node name="AnimationPlayer" parent="." index="2" groups=["Enemy", "StoneGolem"]]
 autoplay = "run"

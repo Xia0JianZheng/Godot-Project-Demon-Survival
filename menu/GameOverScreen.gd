@@ -13,3 +13,7 @@ func _on_Play_Again_pressed():
 
 func _on_Shop_pressed():
 	get_tree().change_scene("res://menu/Shop.tscn")
+
+
+func _on_GameOverMenu_ready():
+	$GameOverMenu/PlayAgain.grab_focus()
