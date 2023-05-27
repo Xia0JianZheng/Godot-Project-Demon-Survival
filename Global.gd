@@ -2,9 +2,13 @@ extends Node
 
 var score = 0
 var gold = 0
-var playerDamage = 0
-var hp_lv_up = 200
 var playerName = ""
+
+var hp_max = 0
+var damage = 0
+var defense = 0
+var attackSpeed = 2.0
+
 var shop
 
 

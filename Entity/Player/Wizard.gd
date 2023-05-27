@@ -3,7 +3,10 @@ extends "res://Entity/EntityBase.gd"
 export(PackedScene) var ICESPEAR: PackedScene = preload("res://Projectile/PlayerIceSpear.tscn")
 
 onready var attackTimer = $AttackTimer
-
+func _ready():
+	defense += Global.defense
+	attackTimer.wait_time = Global.attackSpeed
+	
 func _physics_process(delta):
 	var input_dir = get_input_direction()
 	if input_dir != Vector2.ZERO:

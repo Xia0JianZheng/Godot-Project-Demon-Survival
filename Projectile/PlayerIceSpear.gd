@@ -5,6 +5,9 @@ export(int) var SPEED: int = 100
 onready var animPlayer = $AnimationPlayer
 onready var collisionShape = $CollisionShape2D
 
+func _ready():
+	damage += Global.damage
+
 func _physics_process(delta):
 	if(collisionShape.disabled == false):
 		var direction = Vector2.RIGHT.rotated(rotation)

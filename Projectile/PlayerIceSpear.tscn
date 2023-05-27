@@ -132,7 +132,6 @@ tracks/2/keys = {
 collision_layer = 8
 collision_mask = 5
 script = ExtResource( 3 )
-damage = 50
 SPEED = 200
 
 [node name="Sprite" type="Sprite" parent="." index="0"]

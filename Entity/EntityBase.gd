@@ -48,8 +48,7 @@ func set_hp(value):
 		
 func set_hp_max(value):
 	if self.is_in_group("Player"):
-		print("a")
-		value += Global.hp_lv_up
+		value += Global.hp_max
 		if value != hp_max:
 			hp_max = max(0, value)
 			emit_signal("hp_max_changed", hp_max)
@@ -111,7 +110,7 @@ func receive_damage(base_damage: int):
 func receive_knockback(damage_source_pos: Vector2, receive_damage: int):
 		if receives_knockback:
 			var knockback_direction = damage_source_pos.direction_to(self.global_position)
-			var knockback_strength = receive_damage * knockback_modifier
+			var knockback_strength = 10 * knockback_modifier
 			var knockback = knockback_direction * knockback_strength
 			
 			global_position += knockback

@@ -118,7 +118,7 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource( 2 )
 hp_max = 200
-SPEED = 100
+SPEED = 75
 knockback_modifier = 1.2
 ICESPEAR = ExtResource( 4 )
 
@@ -144,7 +144,6 @@ collision_mask = 4
 position = Vector2( 1, 7 )
 
 [node name="AttackTimer" type="Timer" parent="." index="4"]
-wait_time = 0.5
 one_shot = true
 
 [node name="HealthBar" parent="." index="5"]
