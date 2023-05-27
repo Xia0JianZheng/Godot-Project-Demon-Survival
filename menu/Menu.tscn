@@ -16,6 +16,7 @@ func _on_Continue_pressed():
 	if global != null:
 		global.load_gold()
 		global.load_current_score()
+		global.load_player_stats()
 
 func _on_Scoreboard_pressed():
 	get_tree().change_scene(\"res://ScoreBoard/ScoreBoard.tscn\")

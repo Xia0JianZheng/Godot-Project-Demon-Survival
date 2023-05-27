@@ -1,7 +1,7 @@
 extends Node
 
 var score = 0
-var gold = 0
+var gold = 500000000
 var playerName = ""
 
 var hp_max = 0
@@ -9,10 +9,15 @@ var damage = 0
 var defense = 0
 var attackSpeed = 2.0
 
+var current_maxHealth_level = 0
 var current_attack_level = 0
 var current_defense_level = 0
 var current_attackSpeed_level = 0
-var current_maxHealth_level = 0
+
+var maxHealth_level_price = 50
+var attack_level_price = 100
+var defense_level_price = 150
+var attackSpeed_level_price = 200
 
 func save_gold():
 	var save_game = File.new()
@@ -115,11 +120,20 @@ func save_player_stats():
 	config.set_value("Game", "damage", damage)
 	config.set_value("Game", "defense", defense)
 	config.set_value("Game", "attackSpeed", attackSpeed)
+	config.set_value("Game", "currentMaxHealthLevel", current_maxHealth_level) 
+	config.set_value("Game", "currentAttackLevel", current_attack_level) 
+	config.set_value("Game", "currentDefenseLevel", current_defense_level)
+	config.set_value("Game", "currentAttackSpeedLevel", current_attackSpeed_level)
+	config.set_value("Game", "maxHealth_price", maxHealth_level_price)
+	config.set_value("Game", "attack_price", attack_level_price)
+	config.set_value("Game", "defense_price", defense_level_price)
+	config.set_value("Game", "attackSpeed_price",attackSpeed_level_price)
 
 	# Save the configuration to a file
 	var save_path = "user://save_shop.cfg"  # Specify the file path and name
 	config.save(save_path)
-
+	
+	
 func load_player_stats():
 		# Create a ConfigFile instance
 	var config = ConfigFile.new()
@@ -129,7 +143,17 @@ func load_player_stats():
 	config.load(save_path)
 
 	# Retrieve the variables
-	var hp_max = config.get_value("Game", "hp_max", 0)
-	var damage = config.get_value("Game", "damage", 0)
-	var defense = config.get_value("Game", "defense", 0)
-	var attackSpeed = config.get_value("Game", "attackSpeed", 2.0)
+	hp_max = config.get_value("Game", "hp_max")
+	damage = config.get_value("Game", "damage")
+	defense = config.get_value("Game", "defense")
+	attackSpeed = config.get_value("Game", "attackSpeed")
+
+	current_maxHealth_level = config.get_value("Game", "currentMaxHealthLevel") 
+	current_attack_level = config.get_value("Game", "currentAttackLevel") 
+	current_defense_level = config.get_value("Game", "currentDefenseLevel")
+	current_attackSpeed_level = config.get_value("Game", "currentAttackSpeedLevel")
+
+	maxHealth_level_price = config.get_value("Game", "maxHealth_price")
+	attack_level_price = config.get_value("Game", "attack_price")
+	defense_level_price = config.get_value("Game", "defense_price")
+	attackSpeed_level_price = config.get_value("Game", "attackSpeed_price")
