@@ -12,7 +12,7 @@
 
 ## Contributors
 
-- [Xia0JianZheng](https://github.com/XiaJianZheng)
+- [Xia0JianZheng](https://github.com/Xia0JianZheng)
 - [Joki69](https://github.com/Joki69)
 
 ## Installation
