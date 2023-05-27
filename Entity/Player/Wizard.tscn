@@ -117,7 +117,6 @@ tracks/3/keys = {
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 2 )
-hp_max = 200
 SPEED = 75
 knockback_modifier = 1.2
 ICESPEAR = ExtResource( 4 )

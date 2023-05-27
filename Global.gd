@@ -9,8 +9,10 @@ var damage = 0
 var defense = 0
 var attackSpeed = 2.0
 
-var shop
-
+var current_attack_level = 0
+var current_defense_level = 0
+var current_attackSpeed_level = 0
+var current_maxHealth_level = 0
 
 func save_gold():
 	var save_game = File.new()
@@ -103,3 +105,31 @@ func load_current_score():
 
 	# Display the loaded gold value
 	print("Loaded current score: ", score)
+
+func save_player_stats():
+		# Create a ConfigFile instance
+	var config = ConfigFile.new()
+
+	# Set the variables
+	config.set_value("Game", "hp_max", hp_max)
+	config.set_value("Game", "damage", damage)
+	config.set_value("Game", "defense", defense)
+	config.set_value("Game", "attackSpeed", attackSpeed)
+
+	# Save the configuration to a file
+	var save_path = "user://save_shop.cfg"  # Specify the file path and name
+	config.save(save_path)
+
+func load_player_stats():
+		# Create a ConfigFile instance
+	var config = ConfigFile.new()
+
+	# Load the configuration from a file
+	var save_path = "user://save_shop.cfg"  # Specify the file path and name
+	config.load(save_path)
+
+	# Retrieve the variables
+	var hp_max = config.get_value("Game", "hp_max", 0)
+	var damage = config.get_value("Game", "damage", 0)
+	var defense = config.get_value("Game", "defense", 0)
+	var attackSpeed = config.get_value("Game", "attackSpeed", 2.0)

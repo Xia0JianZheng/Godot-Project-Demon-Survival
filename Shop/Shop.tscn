@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/font/m6x11.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://UI/Gold.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Shop/Shop.gd" type="Script" id=3]
 [ext_resource path="res://Shop/Upgrades.gd" type="Script" id=4]
 [ext_resource path="res://Shop/Skins.gd" type="Script" id=5]
+[ext_resource path="res://menu/MenuUtility/MenuButton.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 size = 100
@@ -105,15 +106,15 @@ margin_bottom = -12.0
 
 [node name="control" type="Node2D" parent="TabContainer/Upgrades/RichTextLabel"]
 
-[node name="Panel1" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
+[node name="Strengh" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
 margin_left = 26.0
-margin_top = 100.0
+margin_top = 50.0
 margin_right = 333.0
-margin_bottom = 407.0
+margin_bottom = 357.0
 
-[node name="Sprite" type="Sprite" parent="TabContainer/Upgrades/RichTextLabel/control/Panel1"]
+[node name="Sprite" type="Sprite" parent="TabContainer/Upgrades/RichTextLabel/control/Strengh"]
 
-[node name="Button" type="Button" parent="TabContainer/Upgrades/RichTextLabel/control/Panel1"]
+[node name="BuyStrengh" type="Button" parent="TabContainer/Upgrades/RichTextLabel/control/Strengh"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -124,7 +125,7 @@ margin_right = 76.5
 margin_bottom = -43.0
 text = "Upgrade"
 
-[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel1"]
+[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Strengh"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -49.0
@@ -134,22 +135,22 @@ margin_bottom = 60.0
 custom_fonts/font = SubResource( 10 )
 text = "Strengh"
 
-[node name="CurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel1"]
+[node name="StrenghCurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Strengh"]
 margin_left = 100.0
 margin_top = 191.0
 margin_right = 205.0
 margin_bottom = 205.0
 text = "Current Level : 0"
 
-[node name="Panel2" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
+[node name="Defense" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
 margin_left = 364.0
-margin_top = 100.0
+margin_top = 50.0
 margin_right = 671.0
-margin_bottom = 407.0
+margin_bottom = 357.0
 
-[node name="Sprite" type="Sprite" parent="TabContainer/Upgrades/RichTextLabel/control/Panel2"]
+[node name="Sprite" type="Sprite" parent="TabContainer/Upgrades/RichTextLabel/control/Defense"]
 
-[node name="Button" type="Button" parent="TabContainer/Upgrades/RichTextLabel/control/Panel2"]
+[node name="BuyDefense" type="Button" parent="TabContainer/Upgrades/RichTextLabel/control/Defense"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -160,7 +161,7 @@ margin_right = 76.5
 margin_bottom = -43.0
 text = "Upgrade"
 
-[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel2"]
+[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Defense"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -49.0
@@ -170,22 +171,22 @@ margin_bottom = 60.0
 custom_fonts/font = SubResource( 10 )
 text = "Defense"
 
-[node name="CurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel2"]
+[node name="DefenseCurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Defense"]
 margin_left = 100.0
 margin_top = 191.0
 margin_right = 205.0
 margin_bottom = 205.0
 text = "Current Level : 0"
 
-[node name="Panel3" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
+[node name="AttackSpeed" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
 margin_left = 706.0
-margin_top = 100.0
+margin_top = 50.0
 margin_right = 1013.0
-margin_bottom = 407.0
+margin_bottom = 357.0
 
-[node name="Sprite" type="Sprite" parent="TabContainer/Upgrades/RichTextLabel/control/Panel3"]
+[node name="Sprite" type="Sprite" parent="TabContainer/Upgrades/RichTextLabel/control/AttackSpeed"]
 
-[node name="Button" type="Button" parent="TabContainer/Upgrades/RichTextLabel/control/Panel3"]
+[node name="BuyAttackSpeed" type="Button" parent="TabContainer/Upgrades/RichTextLabel/control/AttackSpeed"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -196,7 +197,7 @@ margin_right = 76.5
 margin_bottom = -43.0
 text = "Upgrade"
 
-[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel3"]
+[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/AttackSpeed"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -81.0
@@ -206,26 +207,71 @@ margin_bottom = 60.0
 custom_fonts/font = SubResource( 10 )
 text = "Attack Speed"
 
-[node name="CurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/Panel3"]
+[node name="AttackSpeedCurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/AttackSpeed"]
 margin_left = 100.0
 margin_top = 191.0
 margin_right = 205.0
 margin_bottom = 205.0
 text = "Current Level : 0"
 
-[node name="Panel4" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
-margin_left = 1042.0
-margin_top = 100.0
-margin_right = 1349.0
-margin_bottom = 407.0
+[node name="MaxHealth" type="Panel" parent="TabContainer/Upgrades/RichTextLabel/control"]
+margin_left = 1050.0
+margin_top = 50.0
+margin_right = 1357.0
+margin_bottom = 357.0
+
+[node name="Sprite" type="Sprite" parent="TabContainer/Upgrades/RichTextLabel/control/MaxHealth"]
+
+[node name="BuyMaxHealth" type="Button" parent="TabContainer/Upgrades/RichTextLabel/control/MaxHealth"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -76.5
+margin_top = -82.0
+margin_right = 76.5
+margin_bottom = -43.0
+text = "Upgrade"
+
+[node name="LabelTitle" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/MaxHealth"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -81.0
+margin_top = 32.0
+margin_right = 83.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 10 )
+text = "Max Health"
+
+[node name="MaxHealthCurrentLevel" type="Label" parent="TabContainer/Upgrades/RichTextLabel/control/MaxHealth"]
+margin_left = 100.0
+margin_top = 191.0
+margin_right = 205.0
+margin_bottom = 205.0
+text = "Current Level : 0"
 
 [node name="HScrollBar" type="HScrollBar" parent="TabContainer/Upgrades"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = -42.0
-max_value = 500.0
+max_value = 200.0
 page = 30.0
+
+[node name="ColorRect" type="ColorRect" parent="TabContainer/Upgrades"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -376.5
+margin_top = -325.5
+margin_right = 376.5
+margin_bottom = 129.5
+color = Color( 0.172549, 0.152941, 0.152941, 0.913725 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Skins" type="Tabs" parent="TabContainer"]
 visible = false
@@ -251,3 +297,15 @@ margin_left = 58.0
 margin_top = 127.0
 margin_right = 98.0
 margin_bottom = 155.0
+
+[node name="TextureButton" parent="." instance=ExtResource( 6 )]
+margin_top = 591.0
+margin_right = 1279.0
+margin_bottom = 641.0
+text = "Back"
+
+[connection signal="pressed" from="TabContainer/Upgrades/RichTextLabel/control/Strengh/BuyStrengh" to="." method="_on_BuyStrengh_pressed"]
+[connection signal="pressed" from="TabContainer/Upgrades/RichTextLabel/control/Defense/BuyDefense" to="." method="_on_BuyDefense_pressed"]
+[connection signal="pressed" from="TabContainer/Upgrades/RichTextLabel/control/AttackSpeed/BuyAttackSpeed" to="." method="_on_BuyAttackSpeed_pressed"]
+[connection signal="pressed" from="TabContainer/Upgrades/RichTextLabel/control/MaxHealth/BuyMaxHealth" to="." method="_on_BuyMaxHealth_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
