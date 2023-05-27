@@ -14,8 +14,10 @@ func _on_Shop_pressed():
 func _on_Submit_pressed():
 	var global = get_node("/root/Global") 
 	if global != null:
+		print("saving Score")
 		global.save_name()
 		global.save_score()
+		Global.score = 0
 
 func _on_GameOverMenu_ready():
 	$GameOverMenu/PlayAgain.grab_focus()

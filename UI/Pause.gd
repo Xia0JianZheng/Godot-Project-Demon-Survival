@@ -16,3 +16,4 @@ func _on_SaveGame_pressed():
 	var global = get_node("/root/Global") 
 	if global != null:
 		global.save_gold()
+		global.save_current_score()

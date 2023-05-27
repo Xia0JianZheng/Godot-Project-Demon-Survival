@@ -580,7 +580,7 @@ position = Vector2( 628, 346 )
 current = true
 zoom = Vector2( 0.75, 0.75 )
 
-[node name="Score" parent="Camera2D" groups=["Score"] instance=ExtResource( 11 )]
+[node name="Score" parent="Camera2D" instance=ExtResource( 11 )]
 margin_left = 277.0
 margin_top = -264.0
 margin_right = 373.0

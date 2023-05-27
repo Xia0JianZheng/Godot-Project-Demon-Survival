@@ -82,7 +82,7 @@ margin_bottom = 294.0
 custom_fonts/font = SubResource( 2 )
 text = "Gold : "
 
-[node name="PlayerName" type="LineEdit" parent="."]
+[node name="PlayerName" type="LineEdit" parent="." groups=["PlayerName"]]
 margin_left = 541.0
 margin_top = 451.0
 margin_right = 741.0
@@ -159,6 +159,7 @@ margin_bottom = 483.0
 custom_fonts/font = SubResource( 5 )
 text = "Player Name : "
 
+[connection signal="text_changed" from="PlayerName" to="PlayerName" method="_on_PlayerName_text_changed"]
 [connection signal="text_entered" from="PlayerName" to="PlayerName" method="_on_PlayerName_text_entered"]
 [connection signal="ready" from="GameOverMenu" to="." method="_on_GameOverMenu_ready"]
 [connection signal="pressed" from="GameOverMenu/Submit" to="." method="_on_Submit_pressed"]

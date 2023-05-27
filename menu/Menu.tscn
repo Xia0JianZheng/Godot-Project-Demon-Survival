@@ -11,26 +11,20 @@ script/source = "extends Node
 func _on_NewGame_pressed():
 	get_tree().change_scene(\"res://level/level.tscn\")
 
-
 func _on_Continue_pressed():
 	var global = get_node(\"/root/Global\") 
 	if global != null:
 		global.load_gold()
-
+		global.load_current_score()
 
 func _on_Scoreboard_pressed():
-	var global = get_node(\"/root/Global\") 
-	if global != null:
-		global.load_score()
-
+	get_tree().change_scene(\"res://ScoreBoard/ScoreBoard.tscn\")
 
 func _on_Shop_pressed():
 	get_tree().change_scene(\"res://Shop/Shop.tscn\")
 
-
 func _on_Exit_pressed():
 	get_tree().quit()
-
 
 func _on_OptionsMenu_ready():
 	$TittleMenu/OptionsMenu/NewGame.grab_focus()

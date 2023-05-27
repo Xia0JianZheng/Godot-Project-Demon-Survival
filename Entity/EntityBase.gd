@@ -47,11 +47,28 @@ func set_hp(value):
 			healthBar.show()
 		
 func set_hp_max(value):
-	if value != hp_max:
-		hp_max = max(0, value)
-		emit_signal("hp_max_changed", hp_max)
-		healthBar.max_value = hp_max
-		self.hp = hp
+	if self.is_in_group("Player"):
+		print("a")
+		value += Global.hp_lv_up
+		if value != hp_max:
+			hp_max = max(0, value)
+			emit_signal("hp_max_changed", hp_max)
+			
+			var healthBar = get_node("HealthBar")
+			if healthBar:
+				healthBar.max_value = hp_max
+				hp = hp_max  # Ensure the current health doesn't exceed the new maximum
+				emit_signal("hp_changed", hp)
+	else:
+		if value != hp_max:
+			hp_max = max(0, value)
+			emit_signal("hp_max_changed", hp_max)
+			
+			var healthBar = get_node("HealthBar")
+			if healthBar:
+				healthBar.max_value = hp_max
+				hp = hp_max  # Ensure the current health doesn't exceed the new maximum
+				emit_signal("hp_changed", hp)
 
 func _physics_process(delta):
 	
