@@ -19,6 +19,7 @@ export(float) var knockback_modifier: float = 0.2
 export(PackedScene) var WIZARD_EFFECT_DIED: PackedScene = null
 export(PackedScene) var SKELETON_EFFECT_DIED: PackedScene = null
 export(PackedScene) var STONEGOLEM_EFFECT_DIED: PackedScene = null
+export(PackedScene) var SLIME_EFFECT_DIED: PackedScene = null
 
 onready var sprite = $Sprite
 onready var collShape = $CollisionShape2D
@@ -95,6 +96,12 @@ func die():
 		Global.gold += 5
 		SPEED = 0
 		spawn_effect(STONEGOLEM_EFFECT_DIED)
+		queue_free()
+	if self.is_in_group("Slime"):
+		Global.score += 1
+		Global.gold += 1
+		SPEED = 0
+		spawn_effect(SLIME_EFFECT_DIED)
 		queue_free()
 
 func receive_damage(base_damage: int):

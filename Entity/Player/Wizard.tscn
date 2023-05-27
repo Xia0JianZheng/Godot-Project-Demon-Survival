@@ -118,7 +118,7 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource( 2 )
 SPEED = 75
-knockback_modifier = 1.2
+knockback_modifier = 2.0
 ICESPEAR = ExtResource( 4 )
 
 [node name="Sprite" parent="." index="0"]

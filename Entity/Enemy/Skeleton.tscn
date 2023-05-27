@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Entity/Enemy/EnemyBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Skeleton/Skeleton_run.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
-height = 16.0
+height = 24.0
 
 [sub_resource type="Animation" id=2]
 resource_name = "run"
@@ -24,19 +24,25 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="CapsuleShape2D" id=3]
+height = 32.0
+
+[sub_resource type="CapsuleShape2D" id=4]
+height = 32.0
+
 [node name="Skeleton" groups=["Enemy", "Skeleton"] instance=ExtResource( 1 )]
 position = Vector2( -1, 0 )
-hp_max = 50
 defense = 5
 SPEED = 50
-knockback_modifier = 0.5
+knockback_modifier = 2.0
 STONEGOLEM_EFFECT_DIED = null
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
-frame = 3
+hframes = 4
 
 [node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( -1, 0 )
 shape = SubResource( 1 )
 
 [node name="AnimationPlayer" parent="." index="2"]
@@ -44,6 +50,13 @@ autoplay = "run"
 anims/run = SubResource( 2 )
 
 [node name="Hitbox" parent="." index="3" groups=["Enemy", "Skeleton"]]
+damage = 15
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+shape = SubResource( 4 )
 
 [editable path="Hitbox"]
 [editable path="HurtBox"]

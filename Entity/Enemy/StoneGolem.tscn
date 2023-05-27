@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Entity/Enemy/StoneGolem.gd" type="Script" id=1]
 [ext_resource path="res://Projectile/StoneGolemSpear.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Entity/Enemy/EnemyBase.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/StoneGolem/Mecha-stone Golem 0.1/PNG sheet/Character_sheet.png" type="Texture" id=5]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 15.0
+height = 14.0
 
 [sub_resource type="Animation" id=3]
 resource_name = "attack"
@@ -37,11 +41,19 @@ tracks/0/keys = {
 "values": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 11.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 11.0
+height = 24.0
+
 [node name="StoneGolem" groups=["Enemy", "StoneGolem"] instance=ExtResource( 3 )]
 script = ExtResource( 1 )
 hp_max = 250
 defense = 10
-knockback_modifier = 0.3
+knockback_modifier = 1.0
 STONESPEAR = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
@@ -50,10 +62,25 @@ hframes = 10
 vframes = 10
 frame = 20
 
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, -3 )
+shape = SubResource( 4 )
+
 [node name="AnimationPlayer" parent="." index="2" groups=["Enemy", "StoneGolem"]]
 autoplay = "run"
 anims/attack = SubResource( 3 )
 anims/run = SubResource( 1 )
+
+[node name="Hitbox" parent="." index="3"]
+damage = 20
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 0, -3 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D" parent="HurtBox" index="0"]
+position = Vector2( 0, -3 )
+shape = SubResource( 6 )
 
 [node name="AttackTimer" type="Timer" parent="." index="5"]
 wait_time = 3.0

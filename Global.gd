@@ -1,13 +1,13 @@
 extends Node
 
 var score = 0
-var gold = 500000000
+var gold = 0
 var playerName = ""
 
 var hp_max = 0
 var damage = 0
 var defense = 0
-var attackSpeed = 2.0
+var attackSpeed = 1.5
 
 var current_maxHealth_level = 0
 var current_attack_level = 0
