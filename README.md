@@ -18,8 +18,8 @@
 ## Usage
 - To Try the game, follow these steps:
 
-1. Clone the project, or download the .exe and the .pck file in your local machine.
-2. Run the .exe and enjoy it. (Make sure that the .exe and .pck file are in the same location.)
+1. Clone the project, or download the .exe in your local machine.
+2. Run the .exe and enjoy it.
 
 - To run the project, follow these steps:
 
