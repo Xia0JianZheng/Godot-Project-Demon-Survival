@@ -116,7 +116,7 @@ texture = ExtResource( 8 )
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = 148.0
+margin_top = 182.0
 margin_bottom = 360.0
 
 [node name="Submit" parent="GameOverMenu" instance=ExtResource( 3 )]
@@ -124,29 +124,19 @@ margin_top = 0.0
 margin_right = 1280.0
 margin_bottom = 50.0
 text = "Submit"
+arrow_margin_from_center = 120
 
-[node name="PlayAgain" parent="GameOverMenu" instance=ExtResource( 3 )]
+[node name="Shop" parent="GameOverMenu" instance=ExtResource( 3 )]
 margin_top = 54.0
 margin_right = 1280.0
 margin_bottom = 104.0
-focus_neighbour_top = NodePath("../Shop")
-focus_neighbour_bottom = NodePath("../MainMenu")
-text = "Play Again"
-arrow_margin_from_center = 150
-
-[node name="Shop" parent="GameOverMenu" instance=ExtResource( 3 )]
-margin_top = 108.0
-margin_right = 1280.0
-margin_bottom = 158.0
 focus_neighbour_top = NodePath("../MainMenu")
-focus_neighbour_bottom = NodePath("../PlayAgain")
 text = "Shop"
 
 [node name="MainMenu" parent="GameOverMenu" instance=ExtResource( 3 )]
-margin_top = 162.0
+margin_top = 108.0
 margin_right = 1280.0
-margin_bottom = 212.0
-focus_neighbour_top = NodePath("../PlayAgain")
+margin_bottom = 158.0
 focus_neighbour_bottom = NodePath("../Shop")
 text = "Main Menu"
 arrow_margin_from_center = 150
@@ -163,6 +153,5 @@ text = "Player Name : "
 [connection signal="text_entered" from="PlayerName" to="PlayerName" method="_on_PlayerName_text_entered"]
 [connection signal="ready" from="GameOverMenu" to="." method="_on_GameOverMenu_ready"]
 [connection signal="pressed" from="GameOverMenu/Submit" to="." method="_on_Submit_pressed"]
-[connection signal="pressed" from="GameOverMenu/PlayAgain" to="." method="_on_Play_Again_pressed"]
 [connection signal="pressed" from="GameOverMenu/Shop" to="." method="_on_Shop_pressed"]
 [connection signal="pressed" from="GameOverMenu/MainMenu" to="." method="_on_Main_Menu_pressed"]
