@@ -36,12 +36,13 @@
 
 - [x] Make the game fully functional with installer.
 - [x] Create an icon for the game when installed.
-- [ ] Add New Attacks
-- [ ] Add Ability
-- [ ] Complete The Skin Seccion of the Shop
-- [ ] Add Boss Fight
-- [ ] Add More playable characters
-- [ ] Make The Map More Large
+- [ ] Game Guide.
+- [ ] Add New Attacks.
+- [ ] Add Ability.
+- [ ] Complete The Skin Seccion of the Shop.
+- [ ] Add Boss Fight.
+- [ ] Add More playable characters.
+- [ ] Make The Map More Large.
 
 ## Contributing
 
