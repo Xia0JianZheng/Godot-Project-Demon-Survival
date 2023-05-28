@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Entity/EntityBase.gd" type="Script" id=1]
 [ext_resource path="res://overlap/Hurtbox.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://effects/Skeleton/SkeletonDeathEffect.tscn" type="PackedScene" id=4]
 [ext_resource path="res://UI/HealthBar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://effects/StoneGolem/StoneGolemDeathEffect.tscn" type="PackedScene" id=6]
+[ext_resource path="res://effects/Slime/SlimeDeathEffect.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape2D" id=4]
 height = 16.0
@@ -15,6 +16,7 @@ script = ExtResource( 1 )
 WIZARD_EFFECT_DIED = ExtResource( 3 )
 SKELETON_EFFECT_DIED = ExtResource( 4 )
 STONEGOLEM_EFFECT_DIED = ExtResource( 6 )
+SLIME_EFFECT_DIED = ExtResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 

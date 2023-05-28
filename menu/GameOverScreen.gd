@@ -9,7 +9,7 @@ func _on_Play_Again_pressed():
 
 
 func _on_Shop_pressed():
-	get_tree().change_scene("res://menu/Shop.tscn")
+	get_tree().change_scene("res://Shop/Shop.tscn")
 
 func _on_Submit_pressed():
 	var global = get_node("/root/Global") 

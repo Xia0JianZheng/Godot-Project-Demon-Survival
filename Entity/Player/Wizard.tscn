@@ -145,7 +145,4 @@ position = Vector2( 1, 7 )
 [node name="AttackTimer" type="Timer" parent="." index="4"]
 one_shot = true
 
-[node name="HealthBar" parent="." index="5"]
-visible = true
-
 [editable path="HurtBox"]

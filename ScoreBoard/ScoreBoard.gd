@@ -4,9 +4,9 @@ func _ready():
 	
 	var playerName = File.new()
 	
-	playerName.open("user://playerName.save", File.READ)
+	playerName.open("user://playerName.save", File.READ_WRITE)
 	var playerScore = File.new()
-	playerScore.open("user://playerScore.save", File.READ)
+	playerScore.open("user://playerScore.save", File.READ_WRITE)
 	
 	while !playerName.eof_reached():
 		

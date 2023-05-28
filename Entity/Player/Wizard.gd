@@ -4,9 +4,12 @@ export(PackedScene) var ICESPEAR: PackedScene = preload("res://Projectile/Player
 
 onready var attackTimer = $AttackTimer
 func _ready():
+	hp_max = Global.hp_max
+	set_hp(hp_max)
 	defense += Global.defense
 	attackTimer.wait_time = Global.attackSpeed
-	
+
+
 func _physics_process(delta):
 	var input_dir = get_input_direction()
 	if input_dir != Vector2.ZERO:

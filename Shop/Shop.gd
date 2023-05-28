@@ -36,6 +36,8 @@ func _on_BuyStrengh_pressed():
 		Global.gold -= Global.attack_level_price
 		Global.attack_level_price += 100
 		$TabContainer/Upgrades/RichTextLabel/ShopItems/Strengh/StrenghCurrentLevel.text = str("Current level : ", Global.current_attack_level)
+		Global.save_gold()
+		Global.save_player_stats()
 		
 
 func _on_BuyDefense_pressed():
@@ -45,7 +47,9 @@ func _on_BuyDefense_pressed():
 		Global.gold -= Global.defense_level_price
 		Global.defense_level_price += 100
 		$TabContainer/Upgrades/RichTextLabel/ShopItems/Defense/DefenseCurrentLevel.text = str("Current level : ", Global.current_defense_level)
-
+		Global.save_gold()
+		Global.save_player_stats()
+		
 func _on_BuyAttackSpeed_pressed():
 	if Global.gold >= Global.attackSpeed_level_price and Global.current_attackSpeed_level < 10:
 		Global.attackSpeed -= 0.1
@@ -53,15 +57,18 @@ func _on_BuyAttackSpeed_pressed():
 		Global.gold -= Global.attackSpeed_level_price
 		Global.attackSpeed_level_price += 200
 		$TabContainer/Upgrades/RichTextLabel/ShopItems/AttackSpeed/AttackSpeedCurrentLevel.text = str("Current level : ", Global.current_attackSpeed_level)
-
+		Global.save_gold()
+		Global.save_player_stats()
+		
 func _on_BuyMaxHealth_pressed():
 	if Global.gold >= Global.maxHealth_level_price and Global.current_maxHealth_level < 10:
 		Global.hp_max += 10
 		Global.current_maxHealth_level += 1
 		Global.gold -= Global.maxHealth_level_price
-		Global.maxHealth_level_price += 200
+		Global.maxHealth_level_price += 50
 		$TabContainer/Upgrades/RichTextLabel/ShopItems/MaxHealth/MaxHealthCurrentLevel.text = str("Current level : ", Global.current_maxHealth_level)
+		Global.save_gold()
+		Global.save_player_stats()
 		
 func _on_TextureButton_pressed():
-	Global.save_player_stats()
 	get_tree().change_scene("res://menu/Menu.tscn")

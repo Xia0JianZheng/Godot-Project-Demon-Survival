@@ -4,7 +4,7 @@ var score = 0
 var gold = 0
 var playerName = ""
 
-var hp_max = 0
+var hp_max = 100
 var damage = 0
 var defense = 0
 var attackSpeed = 1.5
@@ -19,9 +19,24 @@ var attack_level_price = 100
 var defense_level_price = 150
 var attackSpeed_level_price = 200
 
+func _ready():
+	var files_to_create = [
+	"user://playerGold.save",
+	"user://playerScore.save",
+	"user://playerName.save",
+	"user://current_score.save",
+	"user://save_shop.cfg"]
+	
+	for file_path in files_to_create:
+		var file = File.new()
+		if not file.file_exists(file_path):
+			file.open(file_path, File.WRITE)
+			file.close()
+			print("Created file:", file_path)
+
 func save_gold():
 	var save_game = File.new()
-	save_game.open("user://playerGold.save", File.WRITE)
+	save_game.open("user://playerGold.save", File.READ_WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Gold")
 	for node in save_nodes:
 		# Check the node is an instanced scene so it can be instanced again during load.
@@ -75,7 +90,7 @@ func save_name():
 
 func save_current_score():
 	var save_current_score = File.new()
-	save_current_score.open("user://current_score.save", File.WRITE)
+	save_current_score.open("user://current_score.save", File.READ_WRITE)
 	var score_nodes = get_tree().get_nodes_in_group("Score")
 	for node in score_nodes:
 		# Check the node is an instanced scene so it can be instanced again during load.
@@ -97,8 +112,8 @@ func save_current_score():
 
 func load_current_score():
 	var save_file = File.new()
-	if save_file.file_exists("user://currentScore.save"):
-		save_file.open("user://currentScore.save", File.READ)
+	if save_file.file_exists("user://current_score.save"):
+		save_file.open("user://current_score.save", File.READ)
 		while !save_file.eof_reached():
 			var line = save_file.get_line()
 			var node_data = parse_json(line)
