@@ -37,6 +37,7 @@ func set_hp(value):
 	if value != hp:
 		hp = clamp(value, 0, hp_max)
 		emit_signal("hp_changed", hp)
+		Global.current_hp = hp
 		#healthBar.value = hp
 		healthBar.animate_hp_change(hp)
 		

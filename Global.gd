@@ -8,6 +8,7 @@ var hp_max = 100
 var damage = 0
 var defense = 0
 var attackSpeed = 1.5
+var current_hp = hp_max
 
 var current_maxHealth_level = 0
 var current_attack_level = 0
@@ -33,7 +34,6 @@ func _ready():
 			file.open(file_path, File.WRITE)
 			file.close()
 			print("Created file:", file_path)
-	save_player_stats()
 func save_gold():
 	var save_game = File.new()
 	save_game.open("user://playerGold.save", File.READ_WRITE)
@@ -142,7 +142,23 @@ func save_player_stats():
 	config.set_value("Game", "maxHealth_price", maxHealth_level_price)
 	config.set_value("Game", "attack_price", attack_level_price)
 	config.set_value("Game", "defense_price", defense_level_price)
-	config.set_value("Game", "attackSpeed_price",attackSpeed_level_price)
+	config.set_value("Game", "attackSpeed_price", attackSpeed_level_price)
+	config.set_value("Game", "hp", current_hp)
+	
+	print("max hp ", hp_max)
+	print("damage ", damage)
+	print("defense ", defense)
+	print("attack speed ", attackSpeed)
+	print("health level ", current_maxHealth_level)
+	print("damage level ", current_attack_level)
+	print("defense level ", current_defense_level)
+	print("attack speed ", current_attackSpeed_level)
+	print("current hp ",current_hp)
+	print(maxHealth_level_price)
+	print(attack_level_price)
+	print(defense_level_price)
+	print(attackSpeed_level_price)
+
 
 	# Save the configuration to a file
 	var save_path = "user://save_shop.cfg"  # Specify the file path and name
@@ -162,6 +178,7 @@ func load_player_stats():
 	damage = config.get_value("Game", "damage")
 	defense = config.get_value("Game", "defense")
 	attackSpeed = config.get_value("Game", "attackSpeed")
+	current_hp = config.get_value("Game", "hp")
 
 	current_maxHealth_level = config.get_value("Game", "currentMaxHealthLevel") 
 	current_attack_level = config.get_value("Game", "currentAttackLevel") 

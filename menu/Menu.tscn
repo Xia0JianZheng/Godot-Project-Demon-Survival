@@ -11,12 +11,12 @@ script/source = "extends Node
 func _on_NewGame_pressed():
 	get_tree().change_scene(\"res://level/level.tscn\")
 	Global.score = 0
-	Global.gold = 0
 
 	Global.hp_max = 100
 	Global.damage = 0
 	Global.defense = 0
 	Global.attackSpeed = 1.5
+	Global.current_hp = Global.hp_max
 
 	Global.current_maxHealth_level = 0
 	Global.current_attack_level = 0
@@ -27,6 +27,8 @@ func _on_NewGame_pressed():
 	Global.attack_level_price = 100
 	Global.defense_level_price = 150
 	Global.attackSpeed_level_price = 200
+	
+	Global.save_player_stats()
 
 func _on_Continue_pressed():
 	var global = get_node(\"/root/Global\") 
@@ -43,6 +45,10 @@ func _on_Shop_pressed():
 	get_tree().change_scene(\"res://Shop/Shop.tscn\")
 
 func _on_Exit_pressed():
+	var global = get_node(\"/root/Global\") 
+	if global != null:
+		global.save_gold()
+		global.save_player_stats()
 	get_tree().quit()
 
 func _on_OptionsMenu_ready():
