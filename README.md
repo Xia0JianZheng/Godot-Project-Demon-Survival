@@ -15,11 +15,11 @@
 - [Xia0JianZheng](https://github.com/Xia0JianZheng)
 - [Joki69](https://github.com/Joki69)
 
-## Installation
-
- - [ ] TODO
-
 ## Usage
+- To Try the game, follow these steps:
+
+1. Clone the project, or download the .exe and the .pck file in your local machine.
+2. Run the .exe and enjoy it. (Make sure that the .exe and .pck file are in the same location.)
 
 - To run the project, follow these steps:
 
@@ -34,8 +34,15 @@
 
 ## TODO
 
-- [ ] Make the game fully functional with installer.
-- [ ] Create an icon for the game when installed.
+- [x] Make the game fully functional with installer.
+- [x] Create an icon for the game when installed.
+- [ ] Game Guide.
+- [ ] Add New Attacks.
+- [ ] Add Ability.
+- [ ] Complete The Skin Seccion of the Shop.
+- [ ] Add Boss Fight.
+- [ ] Add More playable characters.
+- [ ] Make The Map More Large.
 
 ## Contributing
 
@@ -48,4 +55,4 @@
 
 ## Special Thanks
 
-- We would like to express our special thanks to [Tarikii](https://github.com/UserNickname) for their invaluable help with the scoreboard feature.
+- We would like to express our special thanks to [Tarikii](https://github.com/Tarikii) for their invaluable help with the scoreboard feature.
