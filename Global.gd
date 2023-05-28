@@ -33,7 +33,7 @@ func _ready():
 			file.open(file_path, File.WRITE)
 			file.close()
 			print("Created file:", file_path)
-
+	save_player_stats()
 func save_gold():
 	var save_game = File.new()
 	save_game.open("user://playerGold.save", File.READ_WRITE)

@@ -17,3 +17,5 @@ func _on_SaveGame_pressed():
 	if global != null:
 		global.save_gold()
 		global.save_current_score()
+		get_tree().change_scene("res://menu/Menu.tscn")
+		get_tree().paused = false
