@@ -1,7 +1,7 @@
 extends Node
 
 var score = 0
-var gold = 0
+var gold = 20000000
 var playerName = ""
 
 var hp_max = 100
@@ -34,6 +34,13 @@ func _ready():
 			file.open(file_path, File.WRITE)
 			file.close()
 			print("Created file:", file_path)
+	var file = File.new()
+	file.open("user://save_shop.cfg", File.READ)
+	var contents = file.get_as_text()
+	file.close()
+	if contents.empty():
+		save_player_stats()
+		
 func save_gold():
 	var save_game = File.new()
 	save_game.open("user://playerGold.save", File.READ_WRITE)
