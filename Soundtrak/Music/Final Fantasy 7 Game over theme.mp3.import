@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Final Fantasy 7 Game over theme.mp3-97fcacf5815c5e0091962e4a20463c8a.mp3str"
+
+[deps]
+
+source_file="res://Soundtrak/Music/Final Fantasy 7 Game over theme.mp3"
+dest_files=[ "res://.import/Final Fantasy 7 Game over theme.mp3-97fcacf5815c5e0091962e4a20463c8a.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

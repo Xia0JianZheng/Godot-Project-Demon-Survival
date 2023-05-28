@@ -37,7 +37,8 @@ func set_hp(value):
 	if value != hp:
 		hp = clamp(value, 0, hp_max)
 		emit_signal("hp_changed", hp)
-		Global.current_hp = hp
+		if self.is_in_group("Player"):
+			Global.current_hp = hp
 		#healthBar.value = hp
 		healthBar.animate_hp_change(hp)
 		
@@ -135,3 +136,6 @@ func spawn_damageIndicator(damage: int):
 	var indicator = spawn_effect(INDICATOR_DAMAGE)
 	if indicator:
 		indicator.label.text = str(damage)
+
+
+

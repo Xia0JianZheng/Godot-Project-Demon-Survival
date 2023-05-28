@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Entity/Player/Wizard.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level/level.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Assets/font/m6x11.ttf" type="DynamicFontData" id=9]
 [ext_resource path="res://UI/Gold.tscn" type="PackedScene" id=10]
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Soundtrak/Music/Medievil Soundtrack 13 - The Asylum Grounds.mp3" type="AudioStream" id=12]
 
 [sub_resource type="Curve2D" id=4]
 _data = {
@@ -484,6 +485,10 @@ font_data = ExtResource( 9 )
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+autoplay = true
+
 [node name="spawn" type="Path2D" parent="."]
 position = Vector2( -29, -20 )
 curve = SubResource( 4 )
@@ -547,36 +552,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -157.0
-margin_top = -223.0
-margin_right = 157.0
-margin_bottom = 223.0
+margin_left = -169.0
+margin_top = -144.0
+margin_right = 145.0
+margin_bottom = 116.0
 color = Color( 0.184314, 0.180392, 0.180392, 1 )
 
-[node name="Label" type="Label" parent="PauseMenu/Pause/Menu"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -99.0
-margin_top = 48.0
-margin_right = 99.0
-margin_bottom = 84.0
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu/Pause/Menu"]
+anchor_right = 1.0
+margin_bottom = 36.0
+
+[node name="Label" type="Label" parent="PauseMenu/Pause/Menu/CenterContainer"]
+margin_left = 58.0
+margin_right = 256.0
+margin_bottom = 36.0
 custom_fonts/font = SubResource( 22 )
 text = "Game Paused"
 
-[node name="SaveGame" parent="PauseMenu/Pause/Menu" instance=ExtResource( 8 )]
+[node name="MenuPause" type="VBoxContainer" parent="PauseMenu/Pause/Menu"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -52.0
+margin_bottom = 52.0
+
+[node name="SaveGame" parent="PauseMenu/Pause/Menu/MenuPause" instance=ExtResource( 8 )]
 pause_mode = 2
-margin_left = -479.0
-margin_top = 277.0
-margin_right = 792.0
-margin_bottom = 327.0
+margin_top = 0.0
+margin_right = 314.0
+margin_bottom = 50.0
+focus_neighbour_top = NodePath("../MainMenu")
+focus_neighbour_bottom = NodePath("../MainMenu")
 text = "Save"
 
-[node name="MainMenu" parent="PauseMenu/Pause/Menu" instance=ExtResource( 8 )]
+[node name="MainMenu" parent="PauseMenu/Pause/Menu/MenuPause" instance=ExtResource( 8 )]
 pause_mode = 2
-margin_left = -479.0
-margin_top = 357.0
-margin_right = 792.0
-margin_bottom = 407.0
+margin_top = 54.0
+margin_right = 314.0
+margin_bottom = 104.0
+focus_neighbour_top = NodePath("../SaveGame")
+focus_neighbour_bottom = NodePath("../SaveGame")
 text = "Menu"
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -601,5 +616,6 @@ text = "Gold : "
 [connection signal="timeout" from="SkeletonSpawnTimer" to="." method="_on_SkeletonSpawnTimer_timeout"]
 [connection signal="timeout" from="StoneGolemSpawnTimer" to="." method="_on_StoneGolemSpawnTimer_timeout"]
 [connection signal="timeout" from="SlimeSpawnTimer" to="." method="_on_SlimeSpawnTimer_timeout"]
-[connection signal="pressed" from="PauseMenu/Pause/Menu/SaveGame" to="PauseMenu/Pause" method="_on_SaveGame_pressed"]
-[connection signal="pressed" from="PauseMenu/Pause/Menu/MainMenu" to="PauseMenu/Pause" method="_on_MainMenu_pressed"]
+[connection signal="ready" from="PauseMenu/Pause/Menu/MenuPause" to="." method="_on_MenuPause_ready"]
+[connection signal="pressed" from="PauseMenu/Pause/Menu/MenuPause/SaveGame" to="PauseMenu/Pause" method="_on_SaveGame_pressed"]
+[connection signal="pressed" from="PauseMenu/Pause/Menu/MenuPause/MainMenu" to="PauseMenu/Pause" method="_on_MainMenu_pressed"]

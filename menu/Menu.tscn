@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://Soundtrak/Music/Medievil Soundtrack 02 - Main Menu.mp3" type="AudioStream" id=1]
 [ext_resource path="res://menu/MenuUtility/Crow.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/font/m6x11.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://menu/MenuUtility/MenuButton.tscn" type="PackedScene" id=4]
@@ -66,6 +67,10 @@ margin_top = -1.0
 margin_bottom = -1.0
 script = SubResource( 8 )
 
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 1280.0
 margin_bottom = 721.0
@@ -103,50 +108,41 @@ rect_min_size = Vector2( 0, 360 )
 alignment = 1
 
 [node name="NewGame" parent="TittleMenu/OptionsMenu" instance=ExtResource( 4 )]
-margin_top = 20.0
 margin_right = 1283.0
-margin_bottom = 70.0
 focus_neighbour_top = NodePath("../Exit")
 focus_neighbour_bottom = NodePath("../Continue")
 arrow_margin_from_center = 150
 
 [node name="Continue" parent="TittleMenu/OptionsMenu" instance=ExtResource( 4 )]
-margin_top = 74.0
+margin_top = 101.0
 margin_right = 1283.0
-margin_bottom = 124.0
+margin_bottom = 151.0
 focus_neighbour_top = NodePath("../NewGame")
 focus_neighbour_bottom = NodePath("../Scoreboard")
 text = "Continue"
 arrow_margin_from_center = 150
 
 [node name="Scoreboard" parent="TittleMenu/OptionsMenu" instance=ExtResource( 4 )]
-margin_top = 128.0
+margin_top = 155.0
 margin_right = 1283.0
-margin_bottom = 178.0
+margin_bottom = 205.0
 focus_neighbour_top = NodePath("../Continue")
 focus_neighbour_bottom = NodePath("../Shop")
 text = "Scoreboard"
 arrow_margin_from_center = 180
 
 [node name="Shop" parent="TittleMenu/OptionsMenu" instance=ExtResource( 4 )]
-margin_top = 182.0
+margin_top = 209.0
 margin_right = 1283.0
-margin_bottom = 232.0
+margin_bottom = 259.0
 focus_neighbour_top = NodePath("../Scoreboard")
 focus_neighbour_bottom = NodePath("../Exit")
 text = "Shop"
 
-[node name="TextureButton" parent="TittleMenu/OptionsMenu" instance=ExtResource( 4 )]
-margin_top = 236.0
-margin_right = 1283.0
-margin_bottom = 286.0
-text = "How To Play"
-arrow_margin_from_center = 180
-
 [node name="Exit" parent="TittleMenu/OptionsMenu" instance=ExtResource( 4 )]
-margin_top = 290.0
+margin_top = 263.0
 margin_right = 1283.0
-margin_bottom = 340.0
+margin_bottom = 313.0
 focus_neighbour_top = NodePath("../Shop")
 focus_neighbour_bottom = NodePath("../NewGame")
 text = "Exit"

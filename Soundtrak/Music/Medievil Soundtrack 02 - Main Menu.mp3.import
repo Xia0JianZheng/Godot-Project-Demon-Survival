@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Medievil Soundtrack 02 - Main Menu.mp3-92ec832ddd877f53522dfca215e9e861.mp3str"
+
+[deps]
+
+source_file="res://Soundtrak/Music/Medievil Soundtrack 02 - Main Menu.mp3"
+dest_files=[ "res://.import/Medievil Soundtrack 02 - Main Menu.mp3-92ec832ddd877f53522dfca215e9e861.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -7,3 +7,5 @@ monitoring = false
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="ready" from="CollisionShape2D" to="." method="_on_CollisionShape2D_ready"]

@@ -48,5 +48,6 @@ one_shot = true
 
 [connection signal="died" from="." to="." method="_on_EntityBase_died"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_HurtBox_area_entered"]
+[connection signal="ready" from="HurtBox" to="." method="_on_HurtBox_ready"]
 
 [editable path="HurtBox"]

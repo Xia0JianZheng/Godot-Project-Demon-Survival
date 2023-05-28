@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Castlevania Curse of Darkness - Dracula's Castle.mp3-bff76e62875360436295aaa90be09c82.mp3str"
+
+[deps]
+
+source_file="res://Soundtrak/Music/Castlevania Curse of Darkness - Dracula's Castle.mp3"
+dest_files=[ "res://.import/Castlevania Curse of Darkness - Dracula's Castle.mp3-bff76e62875360436295aaa90be09c82.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

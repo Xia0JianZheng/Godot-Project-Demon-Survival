@@ -20,3 +20,6 @@ func _on_Submit_pressed():
 
 func _on_GameOverMenu_ready():
 	$GameOverMenu/Submit.grab_focus()
+
+
+

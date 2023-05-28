@@ -41,3 +41,5 @@ func _on_TextureButton_mouse_entered():
 
 func _on_NewGame_ready():
 	grab_focus()
+	
+	

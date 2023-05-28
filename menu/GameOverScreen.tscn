@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://UI/Score.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Gold.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Wizard/single-red-flower-in-pixel-art-style-vector-removebg-preview.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Map/Tileset Grass.png" type="Texture" id=9]
 [ext_resource path="res://UI/PlayerName.gd" type="Script" id=10]
+[ext_resource path="res://Soundtrak/Music/Final Fantasy 7 Game over theme.mp3" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 75
@@ -48,11 +49,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 5 )
 
+[node name="GameOverMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -16.0
-margin_right = -16.0
+margin_top = -3.0
+margin_right = 9.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="GameOver" type="Label" parent="."]
@@ -87,6 +93,8 @@ margin_left = 541.0
 margin_top = 451.0
 margin_right = 741.0
 margin_bottom = 489.0
+focus_neighbour_top = NodePath("../GameOverMenu/MainMenu")
+focus_neighbour_bottom = NodePath("../GameOverMenu/Submit")
 custom_fonts/font = SubResource( 6 )
 script = ExtResource( 10 )
 
@@ -123,6 +131,8 @@ margin_bottom = 360.0
 margin_top = 0.0
 margin_right = 1280.0
 margin_bottom = 50.0
+focus_neighbour_top = NodePath("../../PlayerName")
+focus_neighbour_bottom = NodePath("../Shop")
 text = "Submit"
 arrow_margin_from_center = 120
 
@@ -130,14 +140,16 @@ arrow_margin_from_center = 120
 margin_top = 54.0
 margin_right = 1280.0
 margin_bottom = 104.0
-focus_neighbour_top = NodePath("../MainMenu")
+focus_neighbour_top = NodePath("../Submit")
+focus_neighbour_bottom = NodePath("../MainMenu")
 text = "Shop"
 
 [node name="MainMenu" parent="GameOverMenu" instance=ExtResource( 3 )]
 margin_top = 108.0
 margin_right = 1280.0
 margin_bottom = 158.0
-focus_neighbour_bottom = NodePath("../Shop")
+focus_neighbour_top = NodePath("../Shop")
+focus_neighbour_bottom = NodePath("../../PlayerName")
 text = "Main Menu"
 arrow_margin_from_center = 150
 

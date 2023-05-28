@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/GANGSTA'S PARADISE  Medieval Bardcore Version.mp3-37556426e6148dfa299af58866eca766.mp3str"
+
+[deps]
+
+source_file="res://Soundtrak/Music/GANGSTA'S PARADISE  Medieval Bardcore Version.mp3"
+dest_files=[ "res://.import/GANGSTA'S PARADISE  Medieval Bardcore Version.mp3-37556426e6148dfa299af58866eca766.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

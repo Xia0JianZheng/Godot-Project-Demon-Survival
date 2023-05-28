@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Medievil Soundtrack 13 - The Asylum Grounds.mp3-d72dc82836224484ad9754cb946e190e.mp3str"
+
+[deps]
+
+source_file="res://Soundtrak/Music/Medievil Soundtrack 13 - The Asylum Grounds.mp3"
+dest_files=[ "res://.import/Medievil Soundtrack 13 - The Asylum Grounds.mp3-d72dc82836224484ad9754cb946e190e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
