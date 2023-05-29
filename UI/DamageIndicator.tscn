@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://UI/DamageIndicator.gd" type="Script" id=1]
 [ext_resource path="res://Assets/font/m6x11.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Soundtrak/Music/Minecraft_hit_sound_-_1080p60fps.mp3" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=3]
 size = 25
@@ -91,3 +92,6 @@ text = "0"
 autoplay = "ShowDamage"
 anims/RESET = SubResource( 1 )
 anims/ShowDamage = SubResource( 2 )
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

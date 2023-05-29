@@ -42,8 +42,5 @@ func _on_SlimeSpawnTimer_timeout():
 		slimeInstance.global_position = $spawn/PathFollow2D/Position2D.global_position
 		ySort.add_child(slimeInstance)
 
-
-
-
 func _on_MenuPause_ready():
 	$PauseMenu/Pause/Menu/MenuPause/SaveGame.grab_focus()

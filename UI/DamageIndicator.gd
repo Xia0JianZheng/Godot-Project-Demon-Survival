@@ -5,8 +5,10 @@ export(int) var FRICTION: int = 30
 var SHIFT_DIRECTION: Vector2 = Vector2.ZERO
 
 onready var label = $Label
+onready var hitSound = $HitSound
 
 func _ready():
+	hitSound.play()
 	SHIFT_DIRECTION = Vector2(rand_range(-1, 1), rand_range(-1,1))
 
 

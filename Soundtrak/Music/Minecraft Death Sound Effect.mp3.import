@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Minecraft Death Sound Effect.mp3-db7b4d1bfeab8ad528a
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

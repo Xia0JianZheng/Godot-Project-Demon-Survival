@@ -113,13 +113,14 @@ func receive_knockback(damage_source_pos: Vector2, receive_damage: int):
 			global_position += knockback
 
 func _on_HurtBox_area_entered(hitbox):
+	
 	var actual_damage = receive_damage(hitbox.damage)
 	
 	if hitbox.is_in_group("Projectile") or hitbox.is_in_group("Projectile"):
 		hitbox.hit()
-	
-	receive_knockback(hitbox.global_position, actual_damage)
 		
+	receive_knockback(hitbox.global_position, actual_damage)
+	
 	spawn_damageIndicator(actual_damage)
 
 func _on_EntityBase_died():
@@ -136,6 +137,3 @@ func spawn_damageIndicator(damage: int):
 	var indicator = spawn_effect(INDICATOR_DAMAGE)
 	if indicator:
 		indicator.label.text = str(damage)
-
-
-
