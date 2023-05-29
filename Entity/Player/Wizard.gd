@@ -46,5 +46,3 @@ func get_input_direction() -> Vector2:
 	input_dir = input_dir.normalized()
 
 	return input_dir
-
-

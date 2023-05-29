@@ -151,21 +151,6 @@ func save_player_stats():
 	config.set_value("Game", "defense_price", defense_level_price)
 	config.set_value("Game", "attackSpeed_price", attackSpeed_level_price)
 	config.set_value("Game", "hp", current_hp)
-	
-	print("max hp ", hp_max)
-	print("damage ", damage)
-	print("defense ", defense)
-	print("attack speed ", attackSpeed)
-	print("health level ", current_maxHealth_level)
-	print("damage level ", current_attack_level)
-	print("defense level ", current_defense_level)
-	print("attack speed ", current_attackSpeed_level)
-	print("current hp ",current_hp)
-	print(maxHealth_level_price)
-	print(attack_level_price)
-	print(defense_level_price)
-	print(attackSpeed_level_price)
-
 
 	# Save the configuration to a file
 	var save_path = "user://save_shop.cfg"  # Specify the file path and name

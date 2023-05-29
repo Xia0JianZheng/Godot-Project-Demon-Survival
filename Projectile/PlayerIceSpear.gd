@@ -37,4 +37,4 @@ func _on_PlayerIceSpear_body_entered(body):
 	hit()
 
 func _on_VisibilityNotifier2D_screen_exited():
-	destroy()
+	queue_free()

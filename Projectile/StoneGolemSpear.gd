@@ -24,7 +24,7 @@ func destroy():
 	queue_free()
 
 func _on_VisibilityNotifier2D_screen_exited():
-	hit()
+	queue_free()
 
 func _on_StoneGolemSpear_area_entered(area):
 	hit()
