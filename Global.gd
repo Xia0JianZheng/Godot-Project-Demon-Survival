@@ -1,7 +1,7 @@
 extends Node
 
 var score = 0
-var gold = 0
+var gold = 500000
 var playerName = ""
 
 var hp_max = 100

@@ -43,6 +43,20 @@ func _on_Scoreboard_pressed():
 	get_tree().change_scene(\"res://ScoreBoard/ScoreBoard.tscn\")
 
 func _on_Shop_pressed():
+	Global.load_player_stats()
+	print(\"max hp \", Global.hp_max)
+	print(\"damage \", Global.damage)
+	print(\"defense \", Global.defense)
+	print(\"attack speed \", Global.attackSpeed)
+	print(\"health level \", Global.current_maxHealth_level)
+	print(\"damage level \", Global.current_attack_level)
+	print(\"defense level \", Global.current_defense_level)
+	print(\"attack speed \", Global.current_attackSpeed_level)
+	print(\"current hp \",Global.current_hp)
+	print(Global.maxHealth_level_price)
+	print(Global.attack_level_price)
+	print(Global.defense_level_price)
+	print(Global.attackSpeed_level_price)
 	get_tree().change_scene(\"res://Shop/Shop.tscn\")
 
 func _on_Exit_pressed():

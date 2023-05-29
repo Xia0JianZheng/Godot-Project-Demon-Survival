@@ -1,5 +1,8 @@
 extends Control
 
+func _onready():
+	Global.load_player_stats()
+
 func _process(delta):
 	$TabContainer/Upgrades/RichTextLabel/ShopItems/Strengh/StrenghCurrentLevel.text = str("Current level : ", Global.current_attack_level)
 	$TabContainer/Upgrades/RichTextLabel/ShopItems/Defense/DefenseCurrentLevel.text = str("Current level : ", Global.current_defense_level)
@@ -20,7 +23,7 @@ func _process(delta):
 		$TabContainer/Upgrades/RichTextLabel/ShopItems/Defense/BuyDefense.disabled = true
 	else:
 		$TabContainer/Upgrades/RichTextLabel/ShopItems/Defense/BuyDefense.disabled = false
-	if Global.current_attackSpeed_level == 10:
+	if Global.current_attackSpeed_level == 5:
 		$TabContainer/Upgrades/RichTextLabel/ShopItems/AttackSpeed/BuyAttackSpeed.disabled = true
 	else:
 		$TabContainer/Upgrades/RichTextLabel/ShopItems/AttackSpeed/BuyAttackSpeed.disabled = false
@@ -31,7 +34,7 @@ func _process(delta):
 
 func _on_BuyStrengh_pressed():
 	if Global.gold >= Global.attack_level_price and Global.current_attack_level < 10:
-		Global.damage += 1
+		Global.damage += 2
 		Global.current_attack_level += 1
 		Global.gold -= Global.attack_level_price
 		Global.attack_level_price += 100
@@ -52,7 +55,7 @@ func _on_BuyDefense_pressed():
 		
 func _on_BuyAttackSpeed_pressed():
 	if Global.gold >= Global.attackSpeed_level_price and Global.current_attackSpeed_level < 10:
-		Global.attackSpeed -= 0.1
+		Global.attackSpeed -= 0.2
 		Global.current_attackSpeed_level += 1
 		Global.gold -= Global.attackSpeed_level_price
 		Global.attackSpeed_level_price += 200
@@ -62,7 +65,8 @@ func _on_BuyAttackSpeed_pressed():
 		
 func _on_BuyMaxHealth_pressed():
 	if Global.gold >= Global.maxHealth_level_price and Global.current_maxHealth_level < 10:
-		Global.hp_max += 10
+		Global.hp_max += 20
+		Global.current_hp += 20
 		Global.current_maxHealth_level += 1
 		Global.gold -= Global.maxHealth_level_price
 		Global.maxHealth_level_price += 50
